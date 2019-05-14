@@ -1,8 +1,8 @@
 import React from "react";
 import TodoForm from "./TodoForm";
 import Todos from "./Todos"
-// import { connect } from "react-redux";
-// import styled from 'styled-components';
+import { connect } from "react-redux";
+import styled from 'styled-components';
 
 
 
