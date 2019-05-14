@@ -7,17 +7,35 @@ import Todos from "./Todos"
 
 
 class ToDoList extends React.Component {
-  state = {
-    newToDo: "",
-    completed: false
+    constructor(props){
+    super(props);
+    this.state = {
+        newToDo: "",
   };
+}
+
+        handleChanges=e=>{
+            this.setState({[e.target.name]:e.target.value})
+        }
+
+        addTodo=()=>{
+        const {newToDo}=this.state;
+        const newTodo={
+            id:this.props.todos.length+1,
+            completed:false,
+            text:newToDo
+        };
+        this.props.newToDo(newTodo);
+        this.setState({newToDo:''});
+
+        }
 
 
   render() {
     return (
       <>
         <Todos/>
-        <TodoForm/>
+        <TodoForm handleChanges={this.handleChanges} addTodo={this.addTodo}/>
       </>
     );
   }
