@@ -1,4 +1,6 @@
 import React from "react";
+import TodoForm from "./TodoForm";
+import Todos from "./Todos"
 // import { connect } from "react-redux";
 // import styled from 'styled-components';
 
@@ -14,16 +16,8 @@ class ToDoList extends React.Component {
   render() {
     return (
       <>
-        <form onSubmit={this.addToDo}>
-          <input
-            type="text"
-            name="newToDo"
-            value={this.state.newToDo}
-            onChange={this.handleChanges}
-            placeholder="Add TO List"
-          />
-          <button type="submit">ADD IT</button>
-        </form>
+        <Todos/>
+        <TodoForm/>
       </>
     );
   }
